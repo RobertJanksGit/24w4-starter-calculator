@@ -73,6 +73,28 @@ function convertNumberToWords(number) {
 
   return words.trim();
 }
+let number = 0;
+
+const buttonZero = document.querySelector("#btn0");
+const buttonOne = document.querySelector("#btn1");
+const buttoTwo = document.querySelector("#btn2");
+const buttonThree = document.querySelector("#btn3");
+const buttonFour = document.querySelector("#btn4");
+const buttonFive = document.querySelector("#btn5");
+const buttonSix = document.querySelector("#btn6");
+const buttonSeven = document.querySelector("#btn7");
+const buttonEight = document.querySelector("#btn8");
+const buttonNine = document.querySelector("#btn9");
+
+buttonZero.addEventListener("click", () => {
+  number === 0 ? 0 : (number += "0");
+
+  console.log(convertNumberToWords(number));
+});
+buttonOne.addEventListener("click", () => {
+  number += "1";
+  console.log(convertNumberToWords(number));
+});
 
 let displayValue = convertNumberToWords(0);
 let firstOperand = null;
@@ -126,7 +148,5 @@ function clearDisplay() {
   currentOperator = null;
   updateDisplay();
 }
-
-console.log(convertNumberToWords(10));
 
 updateDisplay();
