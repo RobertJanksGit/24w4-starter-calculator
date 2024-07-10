@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "digital-clock"; /* Replace with your preferred font name */
+  src: url("./DSEG7CLASSIC-BOLD.TTF") format("truetype"); /* Adjust the path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -8,7 +17,7 @@ body {
 }
 
 .calculator {
-  background-color: #fff;
+  background-color: #faf9f6;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -18,10 +27,40 @@ body {
   font-size: 2em;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #333;
+  background-color: black;
   color: #fff;
   border-radius: 5px;
   text-align: right;
+}
+
+#inner-display {
+  border: solid black;
+  background-color: #b1c9b7;
+}
+
+#inner-display-border {
+  border: solid black;
+  background-color: white;
+  padding: 0.25rem;
+}
+
+#grey-mesh {
+  background-color: #a7a7a7;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+#solar-panel {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.solar-panel-child {
+  background-color: #572b2c;
+  display: inline-block;
+  border: solid #997171 1px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .buttons {
@@ -31,23 +70,62 @@ body {
 }
 
 .btn {
-  padding: 20px;
+  font-family: "Orbitron", sans-serif;
+  padding: 10px;
   font-size: 1.5em;
-  border: none;
-  background-color: #333;
+  border: solid black;
+  background-color: #a9a9a9;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for 3D effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for button */
+  transition: transform 0.1s; /* Animation for button press */
+}
+
+.btn:hover {
+  background-color: #5555554d;
+}
+
+.operator-btn {
+  font-family: "Orbitron", sans-serif;
+  padding: 10px;
+  font-size: 1.5em;
+  border: solid black;
+  background-color: #787878;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #555;
+.operator-btn:hover {
+  background-color: #5555554d;
 }
 
 .btn-clear {
-  background-color: #28a745;
+  background-color: #efd5fc;
 }
 
 .btn-clear:hover {
-  background-color: #218838;
+  background-color: #f0e0f8;
+}
+
+.highlight {
+  background-color: white;
+  color: black;
+}
+
+#letter-display {
+  color: black;
+  font-family: "Orbitron", sans-serif;
+  font-size: small;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+#number-display {
+  font-family: "digital-clock", sans-serif;
+  font-size: larger;
+  color: black;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }

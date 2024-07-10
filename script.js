@@ -37,7 +37,7 @@ function convertNumberToWords(number) {
     "Eighty",
     "Ninety",
   ];
-  const thousands = ["", "Thousand", "Million", "Billion"]; // Add more as needed
+  const thousands = ["", "Thousand", "Million", "Billion"];
 
   // Handle the special case for zero
   if (number === 0) {
@@ -85,8 +85,10 @@ let currentOperator = null; // Store the current operator
 
 // Function to update the calculator display
 function updateDisplay(number) {
-  const display = document.getElementById("display"); // Get the display element
-  display.innerText = convertNumberToWords(parseInt(number, 10)); // Convert the number to words and update the display
+  const numDisplay = document.querySelector("#number-display");
+  const letterDisplay = document.querySelector("#letter-display");
+  numDisplay.innerText = number;
+  letterDisplay.textContent = convertNumberToWords(parseInt(number, 10));
 }
 
 // Event listeners for number buttons
@@ -107,48 +109,92 @@ const buttonMultiply = document.querySelector("#multiply");
 const buttonDivide = document.querySelector("#divide");
 const buttonCalculate = document.querySelector("#calculate");
 
+const children = document.querySelector(".buttons").children;
 // Add event listeners to number buttons to update the display
 buttonZero.addEventListener("click", () => {
   number = number === "0" ? "0" : number + "0"; // Handle leading zeros
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonZero.classList.add("highlight");
   updateDisplay(number);
 });
 buttonOne.addEventListener("click", () => {
   number = number === "0" ? "1" : number + "1";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonOne.classList.add("highlight");
   updateDisplay(number);
 });
 buttonTwo.addEventListener("click", () => {
   number = number === "0" ? "2" : number + "2";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonTwo.classList.add("highlight");
   updateDisplay(number);
 });
 buttonThree.addEventListener("click", () => {
   number = number === "0" ? "3" : number + "3";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonThree.classList.add("highlight");
   updateDisplay(number);
 });
 buttonFour.addEventListener("click", () => {
   number = number === "0" ? "4" : number + "4";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
   updateDisplay(number);
+  buttonFour.classList.add("highlight");
 });
 buttonFive.addEventListener("click", () => {
   number = number === "0" ? "5" : number + "5";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
   updateDisplay(number);
+  buttonFive.classList.add("highlight");
 });
 buttonSix.addEventListener("click", () => {
   number = number === "0" ? "6" : number + "6";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
   updateDisplay(number);
+  buttonSix.classList.add("highlight");
 });
 buttonSeven.addEventListener("click", () => {
   number = number === "0" ? "7" : number + "7";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonSeven.classList.add("highlight");
   updateDisplay(number);
 });
 buttonEight.addEventListener("click", () => {
   number = number === "0" ? "8" : number + "8";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonEight.classList.add("highlight");
   updateDisplay(number);
 });
 buttonNine.addEventListener("click", () => {
   number = number === "0" ? "9" : number + "9";
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonNine.classList.add("highlight");
   updateDisplay(number);
 });
 buttonClear.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
   number = "0"; // Reset the number to zero
   firstOperand = null; // Clear the first operand
   secondOperand = null; // Clear the second operand
@@ -158,18 +204,38 @@ buttonClear.addEventListener("click", () => {
 
 // Event listeners for operator buttons
 buttonAdd.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonAdd.classList.add("highlight");
   appendOperator("+");
 });
 buttonSubtract.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonSubtract.classList.add("highlight");
   appendOperator("-");
 });
 buttonMultiply.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonMultiply.classList.add("highlight");
   appendOperator("*");
 });
 buttonDivide.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonDivide.classList.add("highlight");
   appendOperator("/");
 });
 buttonCalculate.addEventListener("click", () => {
+  for (let i = 0; i < children.length; i++) {
+    children[i].classList.remove("highlight");
+  }
+  buttonCalculate.classList.add("highlight");
   calculate(); // Perform the calculation
 });
 
@@ -200,6 +266,51 @@ function calculate() {
   secondOperand = null; // Clear the second operand
   currentOperator = null; // Clear the current operator
 }
+
+//Event listener for keypress
+document.addEventListener("keydown", (evt) => {
+  evt.preventDefault();
+  const key = evt.key;
+
+  if (key >= "0" && key <= "9") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    children[key].classList.add("highlight");
+    number = number === "0" ? key : (number += key);
+    updateDisplay(number);
+  } else if (key === "+") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    buttonAdd.classList.add("highlight");
+    appendOperator("+");
+  } else if (key === "-") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    buttonSubtract.classList.add("highlight");
+    appendOperator("-");
+  } else if (key === "*") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    buttonMultiply.classList.add("highlight");
+    appendOperator("*");
+  } else if (key === "/") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    buttonDivide.classList.add("highlight");
+    appendOperator("/");
+  } else if (key === "Enter" || key === "=") {
+    for (let i = 0; i < children.length; i++) {
+      children[i].classList.remove("highlight");
+    }
+    buttonCalculate.classList.add("highlight");
+    calculate(); // Perform the calculation
+  }
+});
 
 // Initial display update
 updateDisplay(number); // Set the initial display to zero in words
