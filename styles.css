@@ -70,6 +70,7 @@ body {
 }
 
 .btn {
+  /* background: linear-gradient(to bottom, #ffffff, #d0d0d0); */
   font-family: "Orbitron", sans-serif;
   padding: 10px;
   font-size: 1.5em;
@@ -81,6 +82,11 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for 3D effect */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for button */
   transition: transform 0.1s; /* Animation for button press */
+}
+
+.btn:active {
+  transform: translateY(2px); /* Move button down on press */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Adjust shadow on press */
 }
 
 .btn:hover {
@@ -120,7 +126,9 @@ body {
   font-family: "Orbitron", sans-serif;
   font-size: small;
   margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 #number-display {
   font-family: "digital-clock", sans-serif;

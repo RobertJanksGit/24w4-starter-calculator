@@ -275,8 +275,10 @@ document.addEventListener("keydown", (evt) => {
   if (key >= "0" && key <= "9") {
     for (let i = 0; i < children.length; i++) {
       children[i].classList.remove("highlight");
+      if (children[i].textContent === key) {
+        children[i].classList.add("highlight");
+      }
     }
-    children[key].classList.add("highlight");
     number = number === "0" ? key : (number += key);
     updateDisplay(number);
   } else if (key === "+") {
