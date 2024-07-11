@@ -51,6 +51,10 @@ function convertNumberToWords(number) {
   ];
   const thousands = ["", "Thousand", "Million", "Billion"];
 
+  if (number.toString().length === 13) {
+    return "Input limit reached.";
+  }
+
   if (number === 0) {
     return "Zero";
   }
