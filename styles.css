@@ -4,7 +4,7 @@
   font-family: "digital-clock"; /* Replace with your preferred font name */
   src: url("./DSEG7CLASSIC-BOLD.TTF") format("truetype"); /* Adjust the path and format */
   font-weight: normal;
-  font-style: normal;
+  font-style: normal;9
 }
 
 body {
@@ -17,40 +17,74 @@ body {
 }
 
 .calculator {
+  width: 500px;
+  border: solid black;
   background-color: #faf9f6;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.calculator.rotate-180 {
+  transform: rotate(180deg); /* Rotate the calculator 180 degrees */
 }
 
 .display {
+  position: relative;
   font-size: 2em;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 1px;
+  margin-top: 10px;
+  padding: 10px 10px 5px 10px;
   background-color: black;
   color: #fff;
-  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  top: -10px; /* Slightly overlaps the main body */
   text-align: right;
 }
 
 #inner-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
   border: solid black;
   background-color: #b1c9b7;
+}
+
+.huhCat {
+  background-image: url("./cat-huh.gif");
+  background-size: 100px;
+  background-repeat: no-repeat;
 }
 
 #inner-display-border {
   border: solid black;
   background-color: white;
   padding: 0.25rem;
+  margin-bottom: 2rem;
 }
 
 #grey-mesh {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   background-color: #a7a7a7;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #solar-panel {
   margin: 0.5rem;
+  margin-right: 3rem;
+  margin-bottom: 0.7rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -65,12 +99,14 @@ body {
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 
 .btn {
-  /* background: linear-gradient(to bottom, #ffffff, #d0d0d0); */
+
+  font-size: 70px;
+  height: 60px;
   font-family: "Orbitron", sans-serif;
   padding: 10px;
   font-size: 1.5em;
@@ -102,6 +138,14 @@ body {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for 3D effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for button */
+  transition: transform 0.1s; /* Animation for button press */
+}
+
+.operator-btn:active {
+  transform: translateY(2px); /* Move button down on press */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Adjust shadow on press */
 }
 
 .operator-btn:hover {
@@ -114,6 +158,23 @@ body {
 
 .btn-clear:hover {
   background-color: #f0e0f8;
+}
+
+.btn-on-clear {
+  background-color: #efd5fc;
+}
+
+.btn-on-clear:hover {
+  background-color: #f0e0f8;
+}
+
+.smaller {
+font-size: x-small;
+padding: 5px;
+}
+
+#add {
+  grid-row: span 2;
 }
 
 .highlight {
