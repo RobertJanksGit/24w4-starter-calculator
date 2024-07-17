@@ -13,4 +13,10 @@ This HTML, CSS, and JavaScript code represents a simple yet interactive calculat
 
 ## FEATURES REQUESTED
 
+-History Log: Implement a history feature that displays past calculations, allowing users to review and reuse previous results.
+-Memory Functions: Add memory storage capabilities (M+, M-, MR, MC) to store and recall values.
+-Error Handling: Enhance error handling to provide informative messages for invalid operations or inputs.
+-Data Persistence: Save user preferences and calculation history across sessions using local storage or cookies.
+-Limit Decimal Points to Two Places
+
 ## LEARNING UPDATE
