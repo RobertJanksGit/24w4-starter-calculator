@@ -17,6 +17,10 @@ This HTML, CSS, and JavaScript code represents a simple yet interactive calculat
 -Memory Functions: Add memory storage capabilities (M+, M-, MR, MC) to store and recall values.
 -Error Handling: Enhance error handling to provide informative messages for invalid operations or inputs.
 -Data Persistence: Save user preferences and calculation history across sessions using local storage or cookies.
--Limit Decimal Points to Two Places
+-Limit Decimal Points to Two Places: Restrict the input to a maximum of two decimal places.
 
 ## LEARNING UPDATE
+
+## REFERENCES
+
+-[Calculator HTML](https://github.com/RobertJanksGit/24w4-starter-calculator/blob/main/index.html) -[Calculator JavaScript](https://github.com/RobertJanksGit/24w4-starter-calculator/blob/main/script.js) -[Calculator CSS](https://github.com/RobertJanksGit/24w4-starter-calculator/blob/main/styles.css)
