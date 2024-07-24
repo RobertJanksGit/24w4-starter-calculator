@@ -1,5 +1,6 @@
 // Function to convert a number to its word representation
 function convertNumberToWords(number) {
+  // Special cases for specific numbers
   const specialCases = {
     8008: "Boob",
     80085: "Boobs",
@@ -7,12 +8,15 @@ function convertNumberToWords(number) {
     0.1134: "Hello there",
   };
 
+  // Check if the number is a special case
   if (specialCases[number] !== undefined) {
     return specialCases[number];
   }
 
+  // Split the number into integer and decimal parts
   const [integerPart, decimalPart] = number.toString().split(".");
 
+  // Arrays for number-to-word conversion
   const ones = [
     "",
     "One",
@@ -51,16 +55,19 @@ function convertNumberToWords(number) {
   ];
   const thousands = ["", "Thousand", "Million", "Billion"];
 
+  // Handle input limit
   if (number.toString().length === 13) {
     return "Input limit reached.";
   }
 
+  // Handle zero
   if (number === 0) {
     return "Zero";
   }
 
   let words = "";
 
+  // Convert integer part to words
   if (integerPart === "0") {
     words = "Zero";
   } else {
@@ -94,6 +101,7 @@ function convertNumberToWords(number) {
     }
   }
 
+  // Convert decimal part to words
   if (decimalPart !== undefined) {
     if (decimalPart.length > 0) {
       words += " point";
@@ -106,6 +114,7 @@ function convertNumberToWords(number) {
   return words.trim();
 }
 
+// Initialize calculator variables
 let countdownTime = 15; // Set the countdown time in seconds
 let powerOff = true;
 let number = "0"; // Initialize number as a string for concatenation
@@ -126,6 +135,7 @@ function startCountdown() {
 
 // Function to update the calculator display
 function updateDisplay(number) {
+  // Check for special case to rotate the calculator and play sound
   if (number === "0.1134") {
     rotate180();
     helloThere.play();
@@ -144,9 +154,11 @@ function updateDisplay(number) {
   }
 }
 
+// Audio files for special sounds
 const huhSound = new Audio("./ceeday-huh-sound-effect.mp3");
 const helloThere = new Audio("./obi-wan-hello-there.mp3");
 
+// Select calculator elements
 const calculator = document.querySelector(".calculator");
 const buttonZero = document.querySelector("#btn0");
 const buttonOne = document.querySelector("#btn1");
@@ -174,7 +186,7 @@ const buttonHuhFive = document.querySelector(".huh5");
 
 const children = document.querySelector(".buttons").children;
 
-// Add event listeners to number buttons to update the display
+// Function to set up event listeners for number buttons
 function setupNumberButtonListener(button, num) {
   button.addEventListener("click", () => {
     if (
@@ -204,6 +216,7 @@ function setupNumberButtonListener(button, num) {
   });
 }
 
+// Set up event listeners for each number button
 setupNumberButtonListener(buttonZero, "0");
 setupNumberButtonListener(buttonOne, "1");
 setupNumberButtonListener(buttonTwo, "2");
@@ -220,6 +233,7 @@ setupNumberButtonListener(buttonHuhThree, "¯_(ツ)_/¯");
 setupNumberButtonListener(buttonHuhFour, "¯_(ツ)_/¯");
 setupNumberButtonListener(buttonHuhFive, "¯_(ツ)_/¯");
 
+// Event listener for decimal point button
 buttonDot.addEventListener("click", () => {
   highlightButton(buttonDot);
   if (!decimalAdded) {
@@ -230,6 +244,7 @@ buttonDot.addEventListener("click", () => {
   startCountdown();
 });
 
+// Event listener for ON/C button
 buttonOnClear.addEventListener("click", () => {
   powerOff = false;
   highlightButton(buttonOnClear);
@@ -242,6 +257,7 @@ buttonOnClear.addEventListener("click", () => {
   startCountdown();
 });
 
+// Event listener for clear button
 buttonClear.addEventListener("click", () => {
   highlightButton(buttonClear);
   number = "0";
@@ -253,7 +269,7 @@ buttonClear.addEventListener("click", () => {
   startCountdown();
 });
 
-// Event listeners for operator buttons
+// Function to set up event listeners for operator buttons
 function setupOperatorButtonListener(button, operator) {
   button.addEventListener("click", () => {
     highlightButton(button);
@@ -261,11 +277,13 @@ function setupOperatorButtonListener(button, operator) {
   });
 }
 
+// Set up event listeners for each operator button
 setupOperatorButtonListener(buttonAdd, "+");
 setupOperatorButtonListener(buttonSubtract, "-");
 setupOperatorButtonListener(buttonMultiply, "*");
 setupOperatorButtonListener(buttonDivide, "/");
 
+// Event listener for calculate button
 buttonCalculate.addEventListener("click", () => {
   highlightButton(buttonCalculate);
   calculate();
