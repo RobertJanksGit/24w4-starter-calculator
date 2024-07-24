@@ -137,10 +137,10 @@ function updateDisplay(number) {
   const letterDisplay = document.querySelector("#letter-display");
   if (powerOff) {
     numDisplay.innerText = "";
-    letterDisplay.textContent = "";
+    letterDisplay.innerText = "";
   } else {
     numDisplay.innerText = number;
-    letterDisplay.textContent = convertNumberToWords(parseFloat(number));
+    letterDisplay.innerText = convertNumberToWords(parseFloat(number));
   }
 }
 
@@ -286,13 +286,13 @@ function appendOperator(operator) {
 function calculate() {
   secondOperand = parseFloat(number);
   if (currentOperator === "+") {
-    number = (firstOperand + secondOperand).toString();
+    number = (firstOperand + secondOperand).toFixed(2).toString();
   } else if (currentOperator === "-") {
-    number = (firstOperand - secondOperand).toString();
+    number = (firstOperand - secondOperand).toFixed(2).toString();
   } else if (currentOperator === "*") {
-    number = (firstOperand * secondOperand).toString();
+    number = (firstOperand * secondOperand).toFixed(2).toString();
   } else if (currentOperator === "/") {
-    number = (firstOperand / secondOperand).toString();
+    number = (firstOperand / secondOperand).toFixed(2).toString();
   }
   updateDisplay(number);
   startCountdown();

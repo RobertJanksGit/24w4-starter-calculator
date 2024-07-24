@@ -17,9 +17,16 @@ This HTML, CSS, and JavaScript code represents a simple yet interactive calculat
 -Memory Functions: Add memory storage capabilities (M+, M-, MR, MC) to store and recall values.
 -Error Handling: Enhance error handling to provide informative messages for invalid operations or inputs.
 -Data Persistence: Save user preferences and calculation history across sessions using local storage or cookies.
--Limit Decimal Points to Two Places: Restrict the input to a maximum of two decimal places.
 
 ## LEARNING UPDATE
+
+### Converting Numbers to Words
+
+One of the key features of this project was converting numerical inputs into their spelled-out form on the display. This involved creating a JavaScript function that handles both integer and decimal numbers, and accounts for special cases and edge conditions. This task helped me improve my problem-solving skills and deepen my understanding of JavaScript string manipulation and number handling.
+
+### Dynamic CSS Styling
+
+Another interesting challenge was implementing dynamic CSS styling to flip the calculator display when the number 0.1134 is input, causing it to spell out "hello." This required integrating CSS transformations and JavaScript event handling to achieve the desired effect. This experience enhanced my knowledge of CSS animations and transformations, as well as how to trigger these styles through JavaScript based on specific conditions.
 
 ## REFERENCES
 
