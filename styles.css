@@ -1,12 +1,15 @@
+/* Import Google Fonts for additional styles */
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
+/* Define the font face for the digital clock display */
 @font-face {
-  font-family: "digital-clock"; /* Replace with your preferred font name */
-  src: url("./DSEG7CLASSIC-BOLD.TTF") format("truetype"); /* Adjust the path and format */
+  font-family: "digital-clock";
+  src: url("./DSEG7CLASSIC-BOLD.TTF") format("truetype");
   font-weight: normal;
-  font-style: normal;9
+  font-style: normal;
 }
 
+/* Basic body styles for centering the calculator on the screen */
 body {
   display: flex;
   justify-content: center;
@@ -16,6 +19,7 @@ body {
   margin: 0;
 }
 
+/* Main calculator container styles */
 .calculator {
   width: 500px;
   border: solid black;
@@ -27,26 +31,25 @@ body {
   transform-style: preserve-3d;
 }
 
+/* Rotate the calculator 180 degrees for special input */
 .calculator.rotate-180 {
-  transform: rotate(180deg); /* Rotate the calculator 180 degrees */
+  transform: rotate(180deg);
 }
 
+/* Display area styles */
 .display {
   position: relative;
   font-size: 2em;
-  margin-bottom: 1px;
-  margin-top: 10px;
-  padding: 10px 10px 5px 10px;
+  margin: 10px 0 1px 0;
+  padding: 10px;
   background-color: black;
   color: #fff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  top: -10px; /* Slightly overlaps the main body */
+  border-radius: 10px 10px 50px 50px;
+  top: -10px;
   text-align: right;
 }
 
+/* Inner display area for additional content */
 #inner-display {
   display: flex;
   flex-direction: column;
@@ -56,12 +59,14 @@ body {
   background-color: #b1c9b7;
 }
 
+/* Background for "huh" button with cat gif */
 .huhCat {
   background-image: url("./cat-huh.gif");
   background-size: 100px;
   background-repeat: no-repeat;
 }
 
+/* Border and background for inner display */
 #inner-display-border {
   border: solid black;
   background-color: white;
@@ -69,22 +74,16 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Mesh background style */
 #grey-mesh {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 10px 10px 50px 50px;
   background-color: #a7a7a7;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px 5px 20px;
 }
 
+/* Solar panel style */
 #solar-panel {
-  margin: 0.5rem;
-  margin-right: 3rem;
-  margin-bottom: 0.7rem;
+  margin: 0.5rem 3rem 0.7rem 0;
   display: flex;
   justify-content: flex-end;
 }
@@ -97,38 +96,41 @@ body {
   height: 1.5rem;
 }
 
+/* Button grid layout */
 .buttons {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 
+/* General button styles */
 .btn {
-
-  font-size: 70px;
+  font-size: 1.5em;
   height: 60px;
   font-family: "Orbitron", sans-serif;
   padding: 10px;
-  font-size: 1.5em;
   border: solid black;
   background-color: #a9a9a9;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for 3D effect */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for button */
-  transition: transform 0.1s; /* Animation for button press */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
 }
 
+/* Button press animation */
 .btn:active {
-  transform: translateY(2px); /* Move button down on press */
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Adjust shadow on press */
+  transform: translateY(2px);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Button hover effect */
 .btn:hover {
   background-color: #5555554d;
 }
 
+/* Operator button styles */
 .operator-btn {
   font-family: "Orbitron", sans-serif;
   padding: 10px;
@@ -138,20 +140,23 @@ body {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Text shadow for 3D effect */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for button */
-  transition: transform 0.1s; /* Animation for button press */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
 }
 
+/* Operator button press animation */
 .operator-btn:active {
-  transform: translateY(2px); /* Move button down on press */
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Adjust shadow on press */
+  transform: translateY(2px);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Operator button hover effect */
 .operator-btn:hover {
   background-color: #5555554d;
 }
 
+/* Clear button styles */
 .btn-clear {
   background-color: #efd5fc;
 }
@@ -160,6 +165,7 @@ body {
   background-color: #f0e0f8;
 }
 
+/* On/Clear button styles */
 .btn-on-clear {
   background-color: #efd5fc;
 }
@@ -168,33 +174,35 @@ body {
   background-color: #f0e0f8;
 }
 
+/* Smaller font size for specific buttons */
 .smaller {
-font-size: x-small;
-padding: 5px;
+  font-size: x-small;
+  padding: 5px;
 }
 
+/* Spanning add button */
 #add {
   grid-row: span 2;
 }
 
+/* Highlight effect for buttons */
 .highlight {
   background-color: white;
   color: black;
 }
 
+/* Letter display styles */
 #letter-display {
   color: black;
   font-family: "Orbitron", sans-serif;
   font-size: small;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-bottom: 10px;
-  margin-top: 5px;
+  margin: 5px;
 }
+
+/* Number display styles */
 #number-display {
   font-family: "digital-clock", sans-serif;
   font-size: larger;
   color: black;
-  margin-right: 5px;
-  margin-bottom: 10px;
+  margin: 5px;
 }
