@@ -6,7 +6,10 @@ This HTML, CSS, and JavaScript code represents a simple yet interactive calculat
 
 ## STACK
 
--Javascript -HTML5 -CSS3 -GitHub
+- Javascript
+- HTML5
+- CSS3
+- GitHub
 
 ## FEATURES REQUESTED
 
